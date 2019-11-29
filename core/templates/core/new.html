@@ -1,0 +1,54 @@
+{% extends "core/header.html" %}
+
+{% block content %} 
+
+{% if messages %}
+<div class="span12">
+{% for message in messages %}
+    <div class="alert alert-danger">
+        {{ message }}
+    </div>
+{% endfor %}
+</div>
+{% endif %}
+
+<body>  
+	<form method="POST" class="post-form" action="">  
+			{% csrf_token %}  
+		<div class="container">  
+	<br>  
+		<div class="form-group row">  
+			<label class="col-sm-1 col-form-label"></label>  
+			<div class="col-sm-4">  
+			<h3>Enter Details</h3>  
+			</div>  
+		</div>  
+		<div class="form-group row">  
+			<label class="col-sm-2 col-form-label">Name:</label>  
+			<div class="col-sm-4">  
+				{{ form.name }}  
+			</div>  
+		</div>  
+		<div class="form-group row">  
+			<label class="col-sm-2 col-form-label">Phonenumber:</label>  
+			<div class="col-sm-4">  
+				{{ form.phonenumber }}  
+			</div>  
+		</div>  
+		</div>  
+		<div class="form-group row">  
+			<label class="col-sm-1 col-form-label"></label>  
+			<div class="col-sm-4">  
+				<button type="submit" class="btn btn-primary">Submit</button>  
+			</div>  
+		</div>  
+		<div class="form-group row">
+			<div class="col-sm-4">
+			</div>
+		</div>  
+	</form>  
+	<!-- <a href="/show"><button type="submit" class="btn btn-primary">View All</button></a> -->
+</body>  
+</html> 
+
+{% endblock %}
